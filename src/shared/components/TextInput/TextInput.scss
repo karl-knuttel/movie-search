@@ -1,0 +1,15 @@
+.c-text-input {
+    width: 100%;
+
+    .text-input {
+        &__input {
+            width: 100%;
+            outline: none;
+            border: none;
+            padding: 1rem 2rem;
+            height: 4.8rem;
+            border-radius: 0.5rem;
+            font-size: 1.6rem;
+        }
+    }
+}

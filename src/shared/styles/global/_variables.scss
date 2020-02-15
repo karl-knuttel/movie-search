@@ -1,0 +1,27 @@
+// Breakpoints
+$breakpoint--sm: 576px;
+$breakpoint--md: 768px;
+$breakpoint--lg: 944px;
+$breakpoint--xl: 1196px;
+
+// Grid
+$gutter-width: 32px;
+$half-gutter-width: calc(#{$gutter-width} / 2);
+
+// Colors
+$color--primary-light: #40a3a1;
+$color--primary-mid: #357677;
+$color--primary-dark: #1c3e3f;
+$color--secondary-mid: #ceed09;
+$color--secondary-mid-hover: #bcd808;
+$color--secondary-dark: #488042;
+$color--black: #2c2c2c;
+$color--white: #ffffff;
+$color--grey-light: #e7e7e7;
+$color--grey-light-hover: #d4d4d4;
+$color--grey-mid: #6d6d6d;
+
+$color--warning: #ffd255;
+$color--warning-light: #faf7dae5;
+$color--error: #ff5563;
+$color--error-light: #fae2e4;

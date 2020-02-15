@@ -1,0 +1,32 @@
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin-left: calc(-1 * #{$half-gutter-width});
+    margin-right: calc(-1 * #{$half-gutter-width});
+    align-items: normal;
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+
+.col {
+    position: relative;
+    padding-left: $half-gutter-width;
+    padding-right: $half-gutter-width;
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+
+.col-md-6 {
+    @include breakpoint(md) {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+
+.col-lg-6 {
+    @include breakpoint(lg) {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}

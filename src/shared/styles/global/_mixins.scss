@@ -1,0 +1,24 @@
+// @mixin breakpoint-md {
+//     @media (min-width: #{$breakpoint--md}) {
+//         @content;
+//     }
+// }
+
+@mixin breakpoint($class) {
+    @if $class == sm {
+        @media (min-width: #{$breakpoint--sm}) {
+            @content;
+        }
+    }
+    @if $class == md {
+        @media (min-width: #{$breakpoint--md}) {
+            @content;
+        }
+    }
+
+    @if $class == lg {
+        @media (min-width: #{$breakpoint--lg}) {
+            @content;
+        }
+    }
+}

@@ -1,0 +1,23 @@
+.c-button {
+    width: 100%;
+    height: 4rem;
+    font-size: 1.6rem;
+    font-weight: 600;
+    padding: 0 2.6rem;
+    outline: none;
+    border: none;
+    border-radius: 0.5rem;
+    transition: background-color 0.2s ease-out;
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    &.primary {
+        background-color: $color--secondary-mid;
+
+        &:hover {
+            background-color: $color--secondary-mid-hover;
+        }
+    }
+}

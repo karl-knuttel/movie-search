@@ -1,0 +1,51 @@
+.c-notification {
+    background: $color--white;
+    width: 100%;
+    border-radius: 0.5rem;
+    box-shadow: 0px 0px 5px 3px rgba($color--black, 0.25);
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        height: 100%;
+        width: 0.5rem;
+    }
+
+    &.warning {
+        background: $color--warning-light;
+
+        &::before {
+            background-color: $color--warning;
+        }
+    }
+
+    .notification {
+        &__header {
+            display: flex;
+            width: 100%;
+            padding: 0.5rem 1rem 0;
+        }
+
+        &__close {
+            align-self: flex-end;
+            font-size: 1.6rem;
+            margin-left: auto;
+            padding: 0;
+            outline: none;
+            border: none;
+            background: transparent;
+            transition: color 0.2s ease-out;
+
+            &:hover {
+                color: rgba($color--black, 0.65);
+                cursor: pointer;
+            }
+        }
+
+        &__body {
+            padding: 0 2rem 2rem;
+        }
+    }
+}

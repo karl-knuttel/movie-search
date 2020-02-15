@@ -1,0 +1,55 @@
+.c-search {
+    background-image: linear-gradient(
+            to right,
+            rgba($color--primary-mid, 0.8) 0%,
+            rgba($color--primary-mid, 0.8) 77%,
+            rgba($color--secondary-dark, 0.8) 100%
+        ),
+        url('/assets/img/search-bg.png');
+    background-size: cover;
+    background-position: center;
+
+    @include breakpoint(md) {
+        // height: 40rem;
+    }
+
+    @include breakpoint(lg) {
+        position: relative;
+    }
+
+    .search {
+        &__container {
+            max-width: 984px;
+            margin: 0 auto;
+            padding: 6rem 4rem;
+        }
+
+        &__title {
+            display: flex;
+            flex-direction: column;
+            color: $color--white;
+            font-weight: normal;
+            font-size: 3.6rem;
+            margin: 0;
+            margin-bottom: 4rem;
+        }
+
+        &__autosuggest-container {
+            width: 100%;
+        }
+
+        &__notification-container {
+            position: absolute;
+            width: calc(100% - 4rem);
+            left: 2rem;
+            bottom: 2rem;
+
+            @include breakpoint(md) {
+                left: unset;
+                top: 2rem;
+                right: 2rem;
+                width: 40rem;
+            }
+        }
+    }
+}

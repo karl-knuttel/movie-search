@@ -1,0 +1,12 @@
+@import './shared/styles/shared';
+
+@import './app.scss';
+@import './core/Core.scss';
+@import './core/components/Layout/Layout.scss';
+@import './shared/components/Button/Button.scss';
+@import './shared/components/DropdownList/DropdownList.scss';
+@import './shared/components/DropdownListItem/DropdownListItem.scss';
+@import './shared//components/Notification/Notification.scss';
+@import './shared/components/TextInput/TextInput.scss';
+@import './features/Search/Search.scss';
+@import './features/Search/components/Autosuggest/Autosuggest.scss';
