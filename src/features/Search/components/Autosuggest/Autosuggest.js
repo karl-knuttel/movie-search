@@ -10,18 +10,26 @@ import * as fromData from '../../store/Search.selectors';
 import DropdownList from '../../../../shared/components/DropdownList';
 import DropdownListItem from '../../../../shared/components/DropdownListItem';
 import TextInput from '../../../../shared/components/TextInput';
+import { FETCH_STATUS } from '../../../../shared/constants';
 
 const mapStateToProps = state => {
     return {
         currentPage: fromData.getSearchResultsCurrentPage(state),
         entities: fromData.getSearchResultsEntities(state),
+        fetchStatus: fromData.getSearchResultsFetchStatus(state),
         pageCount: fromData.getSearchResultsPageCount(state),
         searchString: fromData.getSearchCurrentValue(state)
     };
 };
 
 const Autosuggest = props => {
-    const { currentPage, entities, pageCount, searchString } = props;
+    const {
+        currentPage,
+        entities,
+        fetchStatus,
+        pageCount,
+        searchString
+    } = props;
 
     const inputRef = useRef(null);
     const autosuggestRef = useRef(null);
@@ -164,8 +172,13 @@ const Autosuggest = props => {
                                 <button
                                     className="autosuggest__load-more-button"
                                     onClick={handleLoadMoreClick}
+                                    disabled={
+                                        fetchStatus === FETCH_STATUS.FETCHING
+                                    }
                                 >
-                                    Load more results
+                                    {fetchStatus === FETCH_STATUS.FETCHING
+                                        ? 'Loading...'
+                                        : 'Load more results'}
                                 </button>
                             )}
                         </div>

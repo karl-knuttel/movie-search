@@ -1,0 +1,9 @@
+.c-popular-movies {
+    .popular-movies {
+        &__container {
+            max-width: $size--max-width;
+            margin: 0 auto;
+            padding: 6rem 4rem;
+        }
+    }
+}

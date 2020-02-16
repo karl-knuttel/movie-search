@@ -3,12 +3,14 @@ import React from 'react';
 
 import Layout from './components/Layout';
 import Search from '../features/Search';
+import PopularMovies from '../features/PopularMovies';
 
 const Core = () => {
     return (
         <div>
             <Layout>
                 <Search />
+                <PopularMovies />
             </Layout>
         </div>
     );

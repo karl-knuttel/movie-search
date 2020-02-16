@@ -19,7 +19,7 @@
 
     .search {
         &__container {
-            max-width: 984px;
+            max-width: $size--max-width;
             margin: 0 auto;
             padding: 6rem 4rem;
         }

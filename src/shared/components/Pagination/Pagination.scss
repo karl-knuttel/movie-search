@@ -1,0 +1,49 @@
+.c-pagination {
+    display: flex;
+    justify-content: center;
+    padding: 4rem 0;
+
+    .pagination {
+        &__inner {
+            display: flex;
+            align-items: center;
+        }
+
+        &__text {
+            margin: 0 2rem;
+            font-size: 1.6rem;
+        }
+
+        &__arrow {
+            background: linear-gradient(
+                -45deg,
+                rgba($color--grey-mid, 1) 0%,
+                rgba($color--grey-mid, 1) 50%,
+                rgba($color--grey-mid, 0) 51%,
+                rgba($color--grey-mid, 0) 100%
+            );
+            width: 1.5rem;
+            height: 1.5rem;
+            cursor: pointer;
+
+            &.disabled {
+                background: linear-gradient(
+                    -45deg,
+                    rgba($color--grey-mid, 0.5) 0%,
+                    rgba($color--grey-mid, 0.5) 50%,
+                    rgba($color--grey-mid, 0) 51%,
+                    rgba($color--grey-mid, 0) 100%
+                );
+                cursor: default;
+            }
+
+            &--left {
+                transform: rotate(135deg);
+            }
+
+            &--right {
+                transform: rotate(-45deg);
+            }
+        }
+    }
+}

@@ -6,7 +6,10 @@
 @import './shared/components/Button/Button.scss';
 @import './shared/components/DropdownList/DropdownList.scss';
 @import './shared/components/DropdownListItem/DropdownListItem.scss';
-@import './shared//components/Notification/Notification.scss';
+@import './shared/components/MovieTile/MovieTile.scss';
+@import './shared/components/Notification/Notification.scss';
+@import './shared/components/Pagination/Pagination.scss';
 @import './shared/components/TextInput/TextInput.scss';
+@import './features/PopularMovies/PopularMovies.scss';
 @import './features/Search/Search.scss';
 @import './features/Search/components/Autosuggest/Autosuggest.scss';
