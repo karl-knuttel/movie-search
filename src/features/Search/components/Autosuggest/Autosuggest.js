@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import Downshift from 'downshift';
 
@@ -27,6 +28,7 @@ const Autosuggest = props => {
         currentPage,
         entities,
         fetchStatus,
+        history,
         pageCount,
         searchString
     } = props;
@@ -94,6 +96,7 @@ const Autosuggest = props => {
     const handleOnSelectMovie = selection => {
         // this will redirect to the detailPage
         console.log('selected:', selection);
+        history.push(`/movies/${selection.id}`);
     };
 
     /*
@@ -193,4 +196,4 @@ Autosuggest.propTypes = {
     entities: PropTypes.arrayOf(PropTypes.object)
 };
 
-export default connect(mapStateToProps)(Autosuggest);
+export default withRouter(connect(mapStateToProps)(Autosuggest));

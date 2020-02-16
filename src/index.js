@@ -1,14 +1,16 @@
+import { ConnectedRouter as Router } from 'connected-react-router/immutable';
+import { Provider } from 'react-redux';
+import { renderRoutes } from 'react-router-config';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
+import routes from './app.routes';
 
-import store from './store';
+import store, { history } from './store';
 import './index.scss';
-import App from './App';
 
 ReactDOM.render(
     <Provider store={store}>
-        <App />
+        <Router history={history}>{renderRoutes(routes)}</Router>
     </Provider>,
     document.getElementById('root')
 );

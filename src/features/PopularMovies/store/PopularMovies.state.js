@@ -1,6 +1,6 @@
 import { FETCH_STATUS } from '../../../shared/constants';
 
-const SEARCH_INITIAL_STATE = {
+const POPULAR_MOVIES_INITIAL_STATE = {
     entities: [],
     error: {},
     fetchStatus: FETCH_STATUS.NONE,
@@ -8,4 +8,4 @@ const SEARCH_INITIAL_STATE = {
     pageCount: null
 };
 
-export default SEARCH_INITIAL_STATE;
+export default POPULAR_MOVIES_INITIAL_STATE;

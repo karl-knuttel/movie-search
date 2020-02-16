@@ -1,1 +1,30 @@
+.layout-header {
+    position: relative;
+    z-index: 10;
+    background: $color--white;
 
+    .header {
+        &__container {
+            max-width: $size--max-width;
+            margin: 0 auto;
+            padding: 1.6rem 4rem;
+        }
+
+        &__title-link {
+            color: $color--primary-mid;
+            text-decoration: none;
+        }
+
+        &__title {
+            margin: 0;
+            font-size: 2rem;
+        }
+    }
+}
+
+.layout-footer {
+    position: relative;
+    z-index: 10;
+    height: 8rem;
+    background: $color--black;
+}

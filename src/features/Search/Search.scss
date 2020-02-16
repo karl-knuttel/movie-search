@@ -1,13 +1,12 @@
 .c-search {
+    position: relative;
     background-image: linear-gradient(
-            to right,
-            rgba($color--primary-mid, 0.8) 0%,
-            rgba($color--primary-mid, 0.8) 77%,
-            rgba($color--secondary-dark, 0.8) 100%
-        ),
-        url('/assets/img/search-bg.png');
-    background-size: cover;
-    background-position: center;
+        to right,
+        rgba($color--primary-mid, 0.9) 0%,
+        rgba($color--primary-mid, 0.9) 77%,
+        rgba($color--secondary-dark, 0.9) 100%
+    );
+    z-index: 10;
 
     @include breakpoint(md) {
         // height: 40rem;

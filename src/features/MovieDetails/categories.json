@@ -1,0 +1,96 @@
+{
+    "topCategories": [
+        {
+            "id": "ab123",
+            "title": "IT and telecommunication",
+            "count": 4440
+        },
+        {
+            "id": "ab234",
+            "title": "Other",
+            "count": 3636
+        },
+        {
+            "id": "ab345",
+            "title": "Sales and commerce",
+            "count": 3262
+        },
+        {
+            "id": "ab456",
+            "title": "Engineering / technical",
+            "count": 2652
+        },
+        {
+            "id": "ab567",
+            "title": "Production, construction and trade",
+            "count": 2586
+        },
+        {
+            "id": "ab678",
+            "title": "Health, medical and social",
+            "count": 2130
+        },
+        {
+            "id": "ab789",
+            "title": "Management / executive and strategic management",
+            "count": 1982
+        },
+        {
+            "id": "bc890",
+            "title": "Finance and accounting",
+            "count": 1979
+        }
+    ],
+    "moreCategories": [
+        {
+            "id": "bc123",
+            "title": "Not categorized",
+            "count": 1468
+        },
+        {
+            "id": "bc234",
+            "title": "Adminsitration",
+            "count": 1439
+        },
+        {
+            "id": "bc345",
+            "title": "Banking, insurance and financial services",
+            "count": 1342
+        },
+        {
+            "id": "bc456",
+            "title": "Marketing and advertising",
+            "count": 1304
+        },
+        {
+            "id": "bc567",
+            "title": "Purchasing, transport and logistics",
+            "count": 719
+        },
+        {
+            "id": "bc678",
+            "title": "Training / instruction",
+            "count": 547
+        },
+        {
+            "id": "bc789",
+            "title": "Extra category one",
+            "count": 456
+        },
+        {
+            "id": "bc890",
+            "title": "Extra category two",
+            "count": 421
+        },
+        {
+            "id": "cd123",
+            "title": "Extra category three",
+            "count": 411
+        },
+        {
+            "id": "cd234",
+            "title": "Extra category four",
+            "count": 387
+        }
+    ]
+}

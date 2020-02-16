@@ -43,7 +43,6 @@ function handlePopularMoviesFetched(state, payload) {
 function handlePopularMoviesFetchFailed(state, payload) {
     return {
         ...state,
-        ...state.results,
         fetchStatus: FETCH_STATUS.FETCH_FAILED,
         error: payload
     };

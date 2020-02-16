@@ -1,0 +1,63 @@
+.c-movie-detail {
+    padding: 6rem 4rem;
+    position: relative;
+    background-color: rgba($color--white, 0.9);
+    box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.4);
+    border-radius: 0.5rem;
+
+    .movie-detail {
+        &__image-container {
+            display: flex;
+        }
+
+        &__image {
+            display: flex;
+            max-width: 100%;
+            width: 100%;
+        }
+
+        &__title {
+            margin: 0 0 2rem;
+        }
+
+        &__title-year {
+            font-size: 1.8rem;
+            margin-left: 1rem;
+        }
+
+        &__tagline {
+            margin: 0 0 3rem;
+        }
+
+        &__rating {
+            margin: 0 0 3rem;
+        }
+
+        &__genres {
+            margin: 0 0 3rem;
+        }
+
+        &__genre {
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+            background: $color--grey-mid;
+            color: $color--white;
+
+            &:not(:last-child) {
+                margin-right: 1rem;
+            }
+        }
+
+        &__section {
+            margin-bottom: 3rem;
+        }
+
+        &__section-title {
+            margin: 0 0 1rem;
+        }
+
+        &__description {
+            margin: 0;
+        }
+    }
+}

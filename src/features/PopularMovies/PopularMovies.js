@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { connect } from 'react-redux';
-import { CSSTransition } from 'react-transition-group';
+import { withRouter } from 'react-router-dom';
 
 import store from '../../store';
 import * as fromActions from './store/PopularMovies.actions';
@@ -20,7 +20,7 @@ const mapStateToProps = state => {
 };
 
 const PopularMovies = props => {
-    const { currentPage, entities, fetchStatus, pageCount } = props;
+    const { currentPage, entities, fetchStatus, history, pageCount } = props;
 
     const movieListRef = useRef(0);
 
@@ -51,12 +51,18 @@ const PopularMovies = props => {
         movieListRef.current.scrollIntoView({ behavior: 'smooth' });
     };
 
+    const onMovieClick = id => {
+        console.log(id);
+        history.push(`/movies/${id}`);
+    };
+
     const shouldDisableLeft =
-        (FETCH_STATUS.FETCHED && currentPage === 1) || !FETCH_STATUS.FETCHED;
+        (fetchStatus === FETCH_STATUS.FETCHED && currentPage === 1) ||
+        fetchStatus !== FETCH_STATUS.FETCHED;
 
     const shouldDisableRight =
-        (FETCH_STATUS.FETCHED && currentPage === pageCount) ||
-        !FETCH_STATUS.FETCHED;
+        (fetchStatus === FETCH_STATUS.FETCHED && currentPage === pageCount) ||
+        fetchStatus !== FETCH_STATUS.FETCHED;
 
     return (
         <div className="c-popular-movies" ref={movieListRef}>
@@ -79,7 +85,7 @@ const PopularMovies = props => {
                                 <MovieTile
                                     imageAlt={`${movie.title} poster`}
                                     imageUrl={`https://image.tmdb.org/t/p/w400${movie.poster_path}`}
-                                    onClick={() => null}
+                                    onClick={() => onMovieClick(movie.id)}
                                     title={movie.title}
                                     rating={movie.vote_average}
                                 />
@@ -99,4 +105,4 @@ const PopularMovies = props => {
     );
 };
 
-export default connect(mapStateToProps)(PopularMovies);
+export default withRouter(connect(mapStateToProps)(PopularMovies));

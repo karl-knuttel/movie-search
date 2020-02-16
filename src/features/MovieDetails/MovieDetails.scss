@@ -1,0 +1,22 @@
+.c-movie-details {
+    position: relative;
+    background-color: $color--black;
+
+    .movie-details {
+        &__backdrop {
+            position: fixed;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            background-size: cover;
+            opacity: 0.2;
+        }
+
+        &__container {
+            max-width: $size--max-width;
+            margin: 0 auto;
+            padding: 6rem 4rem;
+        }
+    }
+}
