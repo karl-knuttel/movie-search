@@ -21,6 +21,6 @@ describe('<MovieDetail />', () => {
             />
         );
 
-        // expect(wrapper.text()).toBe('Test value');
+        expect(wrapper.find('p').text()).toBe('lorum ipsum text');
     });
 });

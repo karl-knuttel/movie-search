@@ -13,8 +13,9 @@ describe('<MovieTile />', () => {
                 title="Test Title"
             />
         );
-
-        // expect(wrapper.text()).toBe('Test value');
+        expect(wrapper.find('img').prop('src')).toEqual('testUrl.jpg');
+        expect(wrapper.find('h4').text()).toEqual('Test Title');
+        expect(wrapper.find('h5').text()).toEqual('Rating: 5');
     });
 
     it('Responds to click events', () => {

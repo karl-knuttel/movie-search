@@ -5,16 +5,19 @@ import DropdownListItem from './DropdownListItem';
 
 describe('<DropdownListItem />', () => {
     it('Renders properly', () => {
-        const wrapper = shallow(<DropdownListItem value="Test value" />);
+        const wrapper = shallow(
+            <DropdownListItem>
+                <p>Test value</p>
+            </DropdownListItem>
+        );
 
-        expect(wrapper.text()).toBe('Test value');
+        const inner = wrapper.find('p');
+        expect(inner).toHaveLength(1);
     });
 
     it('Responds to click events', () => {
         const onclick = jest.fn();
-        const wrapper = shallow(
-            <DropdownListItem value="Test value" onClick={onclick} />
-        );
+        const wrapper = shallow(<DropdownListItem onClick={onclick} />);
 
         wrapper.simulate('click');
         expect(onclick).toHaveBeenCalled();
