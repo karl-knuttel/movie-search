@@ -14,6 +14,8 @@ const Core = props => {
     );
 };
 
-Core.propTypes = {};
+Core.propTypes = {
+    route: PropTypes.object
+};
 
 export default Core;

@@ -2,7 +2,7 @@ import * as Actions from './MovieDetails.actions';
 import MOVIE_DETAILS_INITIAL_STATE from './MovieDetails.state';
 import { FETCH_STATUS } from '../../../shared/constants';
 
-export default function searchReducer(
+export default function movieDetailsReducer(
     state = MOVIE_DETAILS_INITIAL_STATE,
     action
 ) {

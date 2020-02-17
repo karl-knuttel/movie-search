@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 
@@ -8,7 +8,6 @@ import * as fromData from './store/MovieDetails.selectors';
 
 import { FETCH_STATUS } from '../../shared/constants';
 import MovieDetail from '../../shared/components/MovieDetail';
-// import Pagination from '../../shared/components/Pagination';
 
 const mapStateToProps = state => {
     return {
@@ -17,14 +16,17 @@ const mapStateToProps = state => {
     };
 };
 
-const MovieDetails = props => {
-    const { movie, fetchStatus, history, location } = props;
+export const MovieDetails = props => {
+    const { movie, fetchStatus, location } = props;
+    let movieId = '';
 
-    const movieId = location.pathname.split('/')[2];
+    if (location) {
+        movieId = location.pathname.split('/')[2];
+    }
 
     useEffect(() => {
         store.dispatch(fromActions.movieDetailsFetch({ id: movieId }));
-    }, [location]);
+    }, [location, movieId]);
 
     return (
         <div className="c-movie-details">

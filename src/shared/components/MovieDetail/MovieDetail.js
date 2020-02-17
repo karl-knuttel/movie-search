@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const MovieTile = props => {
+const MovieDetail = props => {
     const {
         countries,
         description,
@@ -69,12 +69,20 @@ const MovieTile = props => {
                         </h4>
                         <ul>
                             <li>
-                                <a href={homepageUrl} target="_blank">
+                                <a
+                                    href={homepageUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
                                     Website
                                 </a>
                             </li>
                             <li>
-                                <a href={imdbUrl} target="_blank">
+                                <a
+                                    href={imdbUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
                                     IMDB
                                 </a>
                             </li>
@@ -86,7 +94,7 @@ const MovieTile = props => {
     );
 };
 
-MovieTile.propTypes = {
+MovieDetail.propTypes = {
     countries: PropTypes.arrayOf(
         PropTypes.shape({
             iso_3166_1: PropTypes.string,
@@ -110,4 +118,4 @@ MovieTile.propTypes = {
     year: PropTypes.string.isRequired
 };
 
-export default MovieTile;
+export default MovieDetail;

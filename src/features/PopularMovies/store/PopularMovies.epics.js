@@ -1,5 +1,5 @@
 import { combineEpics, ofType } from 'redux-observable';
-import { catchError, map, switchMap, takeUntil } from 'rxjs/operators';
+import { catchError, map, switchMap } from 'rxjs/operators';
 import { of, from } from 'rxjs';
 
 import service from '../services/PopularMovies.service';

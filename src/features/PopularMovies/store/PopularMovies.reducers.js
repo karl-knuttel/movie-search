@@ -2,7 +2,7 @@ import * as Actions from './PopularMovies.actions';
 import POPULAR_MOVIES_INITIAL_STATE from './PopularMovies.state';
 import { FETCH_STATUS } from '../../../shared/constants';
 
-export default function searchReducer(
+export default function popularMoviesReducer(
     state = POPULAR_MOVIES_INITIAL_STATE,
     action
 ) {

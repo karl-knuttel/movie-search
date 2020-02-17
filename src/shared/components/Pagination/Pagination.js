@@ -14,20 +14,22 @@ const Pagination = props => {
     return (
         <div className="c-pagination">
             <div className="pagination__inner">
-                <div
+                <button
                     className={`pagination__arrow pagination__arrow--left ${
                         isDisabledLeft ? 'disabled' : ''
                     }`}
                     onClick={onPrevClick}
+                    disabled={isDisabledLeft}
                 />
                 <h6 className="pagination__text">
                     Showing page {currentPage} of {totalPages}
                 </h6>
-                <div
+                <button
                     className={`pagination__arrow pagination__arrow--right ${
                         isDisabledRight ? 'disabled' : ''
                     }`}
                     onClick={onNextClick}
+                    disabled={isDisabledRight}
                 />
             </div>
         </div>

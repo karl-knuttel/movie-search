@@ -1,6 +1,7 @@
-import React, { useEffect, useRef, useState } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
+import React, { useEffect, useRef, useState } from 'react';
+import PropTypes from 'prop-types';
 
 import store from '../../store';
 import * as fromActions from './store/PopularMovies.actions';
@@ -19,7 +20,7 @@ const mapStateToProps = state => {
     };
 };
 
-const PopularMovies = props => {
+export const PopularMovies = props => {
     const { currentPage, entities, fetchStatus, history, pageCount } = props;
 
     const movieListRef = useRef(0);
@@ -103,6 +104,14 @@ const PopularMovies = props => {
             </div>
         </div>
     );
+};
+
+PopularMovies.propTypes = {
+    currentPage: PropTypes.number.isRequired,
+    entities: PropTypes.array.isRequired,
+    fetchStatus: PropTypes.string.isRequired,
+    history: PropTypes.object,
+    pageCount: PropTypes.number.isRequired
 };
 
 export default withRouter(connect(mapStateToProps)(PopularMovies));
