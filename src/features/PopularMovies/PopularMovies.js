@@ -27,33 +27,32 @@ export const PopularMovies = props => {
 
     const [initialFetched, setInitialFetched] = useState(false);
 
+    const fetchMovies = page => {
+        store.dispatch(fromActions.popularMoviesFetch({ page }));
+    };
+
     useEffect(() => {
         if (!initialFetched) {
-            store.dispatch(fromActions.popularMoviesFetch({ page: 1 }));
+            fetchMovies(1);
             setInitialFetched(true);
         }
     }, [initialFetched]);
 
     const onPaginationNextClick = () => {
         if (currentPage < pageCount) {
-            store.dispatch(
-                fromActions.popularMoviesFetch({ page: currentPage + 1 })
-            );
+            fetchMovies(currentPage + 1);
         }
         movieListRef.current.scrollIntoView({ behavior: 'smooth' });
     };
 
     const onPaginationPrevClick = () => {
         if (currentPage > 1) {
-            store.dispatch(
-                fromActions.popularMoviesFetch({ page: currentPage - 1 })
-            );
+            fetchMovies(currentPage - 1);
         }
         movieListRef.current.scrollIntoView({ behavior: 'smooth' });
     };
 
     const onMovieClick = id => {
-        console.log(id);
         history.push(`/movies/${id}`);
     };
 
@@ -114,4 +113,6 @@ PopularMovies.propTypes = {
     pageCount: PropTypes.number
 };
 
-export default withRouter(connect(mapStateToProps)(PopularMovies));
+export const ConnectedPopularMovies = connect(mapStateToProps)(PopularMovies);
+
+export default withRouter(ConnectedPopularMovies);

@@ -1,11 +1,10 @@
 import React from 'react';
-import { Provider } from 'react-redux';
 import { mount, shallow } from 'enzyme';
 import configureStore from 'redux-mock-store';
 
 import INITIAL_STATE from './store/PopularMovies.state';
 import { testEntities } from './PopularMoviesTestData';
-import ConnectedPopularMovies, { PopularMovies } from './PopularMovies';
+import { ConnectedPopularMovies, PopularMovies } from './PopularMovies';
 
 describe('<PopularMovies />', () => {
     let wrapper;
@@ -61,20 +60,30 @@ describe('<PopularMovies /> with entities', () => {
 });
 
 describe('<ConnectedPopularMovies />', () => {
-    const initialState = INITIAL_STATE;
+    const initialState = { get: () => INITIAL_STATE };
     const mockStore = configureStore();
     let store, wrapper;
 
     beforeEach(() => {
         store = mockStore(initialState);
-        wrapper = shallow(
-            <Provider store={store}>
-                <ConnectedPopularMovies />
-            </Provider>
-        );
+        wrapper = shallow(<ConnectedPopularMovies store={store} />);
     });
 
     it('Renders correctly', () => {
         expect(wrapper.length).toEqual(1);
+    });
+
+    it('Connects to the store correctly', () => {
+        const entities = wrapper.find('PopularMovies').prop('entities');
+        expect(entities).toEqual(INITIAL_STATE.entities);
+
+        const fetchStatus = wrapper.find('PopularMovies').prop('fetchStatus');
+        expect(fetchStatus).toEqual(INITIAL_STATE.fetchStatus);
+
+        const currentPage = wrapper.find('PopularMovies').prop('currentPage');
+        expect(currentPage).toEqual(INITIAL_STATE.currentPage);
+
+        const pageCount = wrapper.find('PopularMovies').prop('pageCount');
+        expect(pageCount).toEqual(INITIAL_STATE.pageCount);
     });
 });

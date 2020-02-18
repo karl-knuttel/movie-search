@@ -60,4 +60,5 @@ export const MovieDetails = props => {
     );
 };
 
-export default withRouter(connect(mapStateToProps)(MovieDetails));
+export const ConnectedMovieDetails = connect(mapStateToProps)(MovieDetails);
+export default withRouter(ConnectedMovieDetails);

@@ -6,7 +6,7 @@ import configureStore from 'redux-mock-store';
 
 import INITIAL_STATE from './store/MovieDetails.state';
 import { testEntity } from './MovieDetailsTestData';
-import ConnectedMovieDetails, { MovieDetails } from './MovieDetails';
+import { ConnectedMovieDetails, MovieDetails } from './MovieDetails';
 
 describe('<MovieDetails />', () => {
     let wrapper;
@@ -40,20 +40,24 @@ describe('<MovieDetails />', () => {
 });
 
 describe('<ConnectedMovieDetails />', () => {
-    const initialState = INITIAL_STATE;
+    const initialState = { get: () => INITIAL_STATE };
     const mockStore = configureStore();
     let store, wrapper;
 
     beforeEach(() => {
         store = mockStore(initialState);
-        wrapper = shallow(
-            <Provider store={store}>
-                <ConnectedMovieDetails />
-            </Provider>
-        );
+        wrapper = shallow(<ConnectedMovieDetails store={store} />);
     });
 
     it('Renders correctly', () => {
         expect(wrapper.length).toEqual(1);
+    });
+
+    it('Connects to the store correctly', () => {
+        const entity = wrapper.find('MovieDetails').prop('movie');
+        expect(entity).toEqual(INITIAL_STATE.entity);
+
+        const fetchStatus = wrapper.find('MovieDetails').prop('fetchStatus');
+        expect(fetchStatus).toEqual(INITIAL_STATE.fetchStatus);
     });
 });
