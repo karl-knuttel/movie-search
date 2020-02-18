@@ -107,11 +107,11 @@ export const PopularMovies = props => {
 };
 
 PopularMovies.propTypes = {
-    currentPage: PropTypes.number.isRequired,
+    currentPage: PropTypes.number,
     entities: PropTypes.array.isRequired,
     fetchStatus: PropTypes.string.isRequired,
     history: PropTypes.object,
-    pageCount: PropTypes.number.isRequired
+    pageCount: PropTypes.number
 };
 
 export default withRouter(connect(mapStateToProps)(PopularMovies));
